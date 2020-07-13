@@ -1,0 +1,14 @@
+<div class="border-right sidebar-wrapper" id="">
+    <div class="list-group list-group-flush">
+        <div class="group-item list-group-item-action"
+            *ngFor="let item of (notes$ | async)?.reverse() | filter : searchText"
+            [ngClass]="{'side-bg-active': item.selected}" (click)="select(item.id)">
+            <p class="title" appHighlight [content]="item.title" [searchTerm]="searchText" [caseSensitive]="false"></p>
+            <p>
+                <span style="font-weight: 500;">{{item.date | date:'shortTime'}}&nbsp;&nbsp;</span>
+                <span appHighlight [content]="item.description" [searchTerm]="searchText"
+                    [caseSensitive]="false"></span>
+            </p>
+        </div>
+    </div>
+</div>

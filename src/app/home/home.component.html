@@ -1,0 +1,18 @@
+<div class="header">
+    <button class="btn btn-light" (click)="toggle()"><img width="15" alt="sidebar"
+            src="../assets/svgs/sidebar.svg"></button>
+    <button class="btn btn-light" (click)="create()"><img width="15" alt="create"
+            src="../assets/svgs/edit.svg"></button>
+    <button class="btn btn-light" (click)="delete()"><img width="15" alt="delete"
+            src="../assets/svgs/trash.svg"></button>
+    <input class="form-control mr-sm-2" type="text" name="searchText" [(ngModel)]="searchText" placeholder="Search"
+        aria-label="Search">
+</div>
+
+<div class="d-flex" [ngClass]="{'toggled': isMenuClose}" id="wrapper">
+    <!-- Sidebar -->
+    <app-sidebar [searchText]="searchText" id="sidebar-wrapper"></app-sidebar>
+
+    <!-- Page Content -->
+    <app-note-content id="page-content-wrapper"> </app-note-content>
+</div>

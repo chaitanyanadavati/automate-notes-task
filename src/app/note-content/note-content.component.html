@@ -1,0 +1,6 @@
+<div class="page-content-wrapper">
+    <div class="container-fluid">
+        <p class="date">{{today | date:'MMMM d, y'}} at {{today | date:'h:mm a'}}</p>
+        <p contentEditable="true" (keyup)="editSeletedText($event.target.textContent)">{{this.todoService.getSeletedNote()?.title}}</p>
+    </div>
+</div>

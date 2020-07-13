@@ -1,0 +1,20 @@
+.page-content-wrapper {
+    width: 100%;
+    .date {
+        font-weight: 500;
+        color: #aaaaaa;
+        text-align: center;
+        margin: 20px;
+    }
+    [contenteditable] {
+        outline: 0px solid transparent;
+    }
+}
+
+@media (min-width: 320px) {
+    .page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+        background-color: #fcfcf5;
+    }
+}
