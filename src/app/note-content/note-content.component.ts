@@ -19,8 +19,6 @@ export class NoteContentComponent implements OnInit {
 
   editSeletedText(title: string) {
     this.todoService.setIsEdit(!title ? false : true);
-    console.log(title, 'title');
-    console.log(this.todoService.getSeletedNote());
     const selectedNote = { id: this.todoService.getSeletedNote().id, title: !title ? 'Add Note' : title };
     this.ngRedux.dispatch({ type: EDIT_NOTE, selectedNote });
   }
